@@ -1,0 +1,318 @@
+<!-- 
+  vareesha abbas
+ i263003
+ SE-A
+Theme: Naruto Fan Page 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naruto Fan Page - Shinobi Reviews</title>
+
+  <style>
+    /* Strictly Limited Naruto Color Palette */
+    :root {
+      --naruto-beige: #f5efe0;       /* Outer canvas background */
+      --naruto-black: #0f141d;       /* Main content card background */
+      --naruto-orange: #ff6f00;      /* Primary accent & headers */
+      --naruto-orange-hover: #e65100;/* Button hover & dark orange */
+      --naruto-card-inner: #18202e;  /* Nested card background */
+      --naruto-border: #ff6f00;      /* Distinct borders */
+      --text-light: #ffffff;         /* Primary text */
+      --text-muted: #b0bec5;        /* Secondary text */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--naruto-beige);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Navigation Header */
+    .main-header {
+      background-color: var(--naruto-black);
+      border-bottom: 4px solid var(--naruto-orange);
+      box-shadow: 0 4px 15px rgba(15, 20, 29, 0.4);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--naruto-orange);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border: 2px solid var(--naruto-orange);
+      border-radius: 6px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a.active, .nav-links a:hover {
+      background-color: var(--naruto-orange);
+      color: var(--naruto-black);
+    }
+
+    /* Outer Container Box over Beige Canvas */
+    .container {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+
+    .central-ninja-box {
+      background-color: var(--naruto-black);
+      border: 3px solid var(--naruto-orange);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* General Section Cards */
+    .section-card {
+      background-color: var(--naruto-card-inner);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid var(--naruto-orange);
+      margin-bottom: 2rem;
+    }
+
+    .section-card h2 {
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      color: var(--naruto-orange);
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid rgba(255, 111, 0, 0.3);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Reviews Grid Layout */
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .character-card {
+      background-color: var(--naruto-black);
+      border: 1px solid var(--naruto-orange);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .character-avatar {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      border: 2px solid var(--naruto-orange);
+      object-fit: cover;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 10px rgba(255, 111, 0, 0.4);
+    }
+
+    .character-card h3 {
+      margin-top: 0;
+      color: var(--naruto-orange);
+      font-size: 1.25rem;
+      border-bottom: 1px solid rgba(255, 111, 0, 0.3);
+      padding-bottom: 0.4rem;
+    }
+
+    .character-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+
+    /* Action Button */
+    .action-btn {
+      background-color: var(--naruto-orange);
+      color: var(--naruto-black);
+      border: 2px solid var(--naruto-orange);
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .action-btn:hover {
+      background-color: var(--naruto-orange-hover);
+      border-color: var(--naruto-orange-hover);
+      color: var(--text-light);
+      transform: translateY(-2px);
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--naruto-orange);
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--naruto-orange);
+      background-color: var(--naruto-black);
+      color: var(--text-light);
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #ffffff;
+      box-shadow: 0 0 8px rgba(255, 111, 0, 0.5);
+    }
+
+    /* Footer */
+    .main-footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--naruto-black);
+      color: var(--text-muted);
+      margin-top: 4rem;
+      border-top: 3px solid var(--naruto-orange);
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">🍃 Hidden Leaf Hub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="reviews.html" class="active">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Main Black & Orange Central Box -->
+    <div class="central-ninja-box">
+
+      <!-- Header Section -->
+      <section class="section-card">
+        <h2>Shinobi & Fan Reviews</h2>
+        <p>Explore community breakdowns of legendary arcs, battle choreographies, and character developments across <em>Naruto</em> and <em>Naruto Shippuden</em>.</p>
+      </section>
+
+      <!-- Featured Reviews Grid -->
+      <section class="section-card">
+        <h2>Featured Arc Reviews</h2>
+        <div class="character-grid">
+          <div class="character-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-FXeIrwKiK1c2dcgnCGTH3bfbGcwMx7X8zHWnKgMd5KGak4CiMRqr7ZA&s=10" alt="Naruto Fan Reviewer" class="character-avatar">
+            <h3>Pain's Assault Arc</h3>
+            <p><strong>Reviewer:</strong> Naruto Uzumaki</p>
+            <p><strong>Rating:</strong> ⭐ 9.9 / 10</p>
+            <p>Masterpiece story arc. Sage Mode entrance and the emotional resolution with Nagato redefined the entire series philosophy.</p>
+          </div>
+          <div class="character-card">
+            <img src="https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png" alt="Sasuke Fan Reviewer" class="character-avatar">
+            <h3>Fated Uchiha Battle</h3>
+            <p><strong>Reviewer:</strong> Sasuke Uchiha</p>
+            <p><strong>Rating:</strong> ⭐ 9.8 / 10</p>
+            <p>The tactical battle with Itachi lives up to years of buildup. High emotional weight and incredible jutsu execution.</p>
+          </div>
+          <div class="character-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxEC8pXrorJGtCILpiM73DohbNE3-PfBY1nBAuOMhiXA&s=10" alt="Sakura Fan Reviewer" class="character-avatar">
+            <h3>Chunin Exams Arc</h3>
+            <p><strong>Reviewer:</strong> Sakura Haruno</p>
+            <p><strong>Rating:</strong> ⭐ 9.7 / 10</p>
+            <p>Classic early Naruto atmosphere. High-stakes taijutsu fights and unforgettable character introductions like Rock Lee and Gaara.</p>
+          </div>
+          <div class="character-card">
+            <img src="https://gbaike-image.cdn.bcebos.com/d000baa1cd11728b4710fdc0a1b6d4cec3fdfd0386b5/d000baa1cd11728b4710fdc0a1b6d4cec3fdfd0386b5_url?x-bce-process=image/format,f_auto/resize,m_lfit,w_400,limit_1" alt="Kakashi Fan Reviewer" class="character-avatar">
+            <h3>Shinobi World War</h3>
+            <p><strong>Reviewer:</strong> Kakashi Hatake</p>
+            <p><strong>Rating:</strong> ⭐ 9.6 / 10</p>
+            <p>Unmatched animation quality during Kakashi vs. Obito. A climactic finish to a legendary saga.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Review Submission Form -->
+      <section class="section-card">
+        <h2>Submit Your Shinobi Review</h2>
+        <form onsubmit="submitReview(event)">
+          <div class="form-group">
+            <label for="reviewerName">Ninja Name / Alias:</label>
+            <input type="text" id="reviewerName" class="form-control" required placeholder="e.g., Jiraiya Fan">
+          </div>
+          <div class="form-group">
+            <label for="reviewerArc">Favorite Arc / Battle:</label>
+            <input type="text" id="reviewerArc" class="form-control" required placeholder="e.g., Pain's Assault">
+          </div>
+          <div class="form-group">
+            <label for="reviewerRating">Rating (1 to 10):</label>
+            <input type="number" id="reviewerRating" class="form-control" min="1" max="10" step="0.1" required placeholder="10">
+          </div>
+          <div class="form-group">
+            <label for="reviewerText">Your Review Thoughts:</label>
+            <textarea id="reviewerText" class="form-control" rows="4" required placeholder="Write your review here..."></textarea>
+          </div>
+          <button type="submit" class="action-btn">Submit Review</button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2026 Hidden Leaf Hub | ICT Lab Project</p>
+  </footer>
+
+  <script>
+    function submitReview(event) {
+      event.preventDefault();
+      const name = document.getElementById('reviewerName').value;
+      const arc = document.getElementById('reviewerArc').value;
+      const rating = document.getElementById('reviewerRating').value;
+      
+      alert(`🍃 Thank you, Shinobi ${name}!\nYour ${rating}/10 review for "${arc}" has been submitted successfully.`);
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
